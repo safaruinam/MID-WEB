@@ -283,7 +283,7 @@ section {
   display: flex;
   text-align: center;
   align-items: center;
-  background: url(/images/home-slide-33.jpg) no-repeat;
+  background: url(images/home-slide-33.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   justify-content: center;
