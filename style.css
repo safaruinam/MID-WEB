@@ -237,7 +237,7 @@ section {
     right: -100%;
     background: #fff;
     width: 30rem;
-    height: calc(100vh - 9.5rem);
+    height: 100vh;
   }
 
   .header .navbar.active {
@@ -435,26 +435,38 @@ section {
   color: #333;
 }
 
+.products {
+  background-color: #cccccca1;
+}
+
 .products .box-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 1.5rem;
 }
 
+.products .box-container .box:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .1);
+}
+
 .products .box-container .box {
   text-align: center;
   border: var(--border);
-  padding: 2rem;
+  background-color: #fff;
   border-radius: 6px;
 }
 
 .products .box-container .box .image {
-  padding: 0rem 2.5rem;
+  padding: 2rem 2.5rem;
 }
 
 .products .box-container .box .image img {
-  height: 30rem;
+  width: 100%;
   border-radius: 6px;
+}
+
+.products .box-container .box .content {
+  padding: 2rem;
 }
 
 .products .box-container .box .content h3 {
@@ -483,34 +495,57 @@ section {
   font-size: 1.5rem;
 }
 
+/* CSS Animations */
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* CSS Transitions */
+.review .box-container .box .user {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+  animation: scaleUp 1s infinite;
+  /* Menggunakan animasi untuk efek hover */
+}
+
+.review .box-container .box {
+  border: var(--border);
+  background-color: #cccccca1;
+  text-align: center;
+  padding: 1rem 0rem;
+  border-radius: 6px;
+  transition: transform 0.3s ease-in-out;
+  /* Menggunakan transisi untuk efek scale */
+}
+
+.review .box-container .box:hover {
+  transform: scale(1.05);
+}
+
+
 .review .box-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 1.5rem;
 }
 
-.review .box-container .box {
-  border: var(--border);
-  text-align: center;
-  padding: 1rem 0rem;
-  border-radius: 6px;
-}
-
 .review .box-container .box p {
   font-size: 1.5rem;
   color: #222;
   line-height: 1.8;
-}
-
-.review .box-container .box .user {
-  height: 7rem;
-  width: 7rem;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.review .box-container .box:hover .user {
-  transform: scale(1.1);
 }
 
 .review .box-container .box h3 {
